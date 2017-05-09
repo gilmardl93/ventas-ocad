@@ -10,10 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('login','UsuariosController@login');
+Route::post('iniciar-sesion','UsuariosController@autenticar');
 
+Route::group(['middleware' => 'auth'],function(){
 Route::get('/','UsuariosController@login');
 
-Route::post('iniciar-sesion','UsuariosController@autenticar');
 Route::post('logout','UsuariosController@logout');
 
 Route::get('dashboard','UsuariosController@dashboard');
@@ -61,3 +63,5 @@ Route::get('anular-venta','VentaController@anular');
 Route::post('buscar-comprobante','VentaController@buscar');
 Route::post('anular-comprobante','VentaController@anularrecibo');
 Route::get('PDFRecibo', 'VentaController@EmitirReciboPDF')->name('PDFRecibo');
+
+});
