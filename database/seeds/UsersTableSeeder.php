@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
 			'nombres'		=> $faker->firstName,
 			'paterno'		=> $faker->lastname,
 			'materno'		=> $faker->lastname,
-			'idroles'		=> 1
+			'idroles'		=> 1,
 			]);
 	}
     }

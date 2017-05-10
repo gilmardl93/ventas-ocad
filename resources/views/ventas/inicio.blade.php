@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     {!! Form::close() !!}
-                            <button class="btn-eliminar btn btn-success btn-generar" data-id="{!! Auth::user()->id !!}">
+                            <button class="btn-eliminar btn btn-success btn-generar" data-id="{!! Auth::user()->id !!}" disabled="true">
                             <span class="glyphicon glyphicon-trash"></span> GENERAR BOLETA
                             </button>
                 </div>
@@ -65,21 +65,11 @@
     <script type="text/javascript">
         $("#listado-postulantes").load("listado-postulantes");
         $("#success").hide();
+        $("#recibo").hide();
 
         $(".btn-generar").on("click",function(){
-            var id = $(this).data('id');
-            $.ajax({
-                type     : "post",
-                url         : "generar-recibo",
-                data       : { 
-                        '_token'  : $('input[name=_token]').val(),
-                        id : id },
-                success : function(echo)
-                {
-                    console.log(echo);
-                    $("#recibo").show();
-                }
-            });
+            document.getElementById('recibo').contentWindow.location.reload(true);
+            $("#recibo").show();
         });
 
         $("#FrmRegistro").validate({
@@ -102,9 +92,9 @@
                     cache   : false,
                     success : function(echo)
                     {
+                        document.getElementById('recibo').contentWindow.location.reload(true);
                         $("#success").show();
                         $(".btn-generar").attr('disabled',false);
-                        console.log(echo);
                     }
                 }); 
             }

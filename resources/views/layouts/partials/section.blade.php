@@ -6,6 +6,7 @@
                                     <span class="arrow open"></span>
                                 </a>
                                 <ul class="sub-menu">
+                                    @if(Auth::user()->idroles == 1)
                                     <li class="nav-item start">
                                         <a href="{!! url('usuarios') !!}" class="nav-link ">
                                             <i class="icon-bulb"></i>
@@ -48,5 +49,20 @@
                                             <span class="title">ANULAR VENTAS</span>
                                         </a>
                                     </li>
+                                    @endif
+                                    @if(Auth::user()->idroles == 2)
+                                    <li class="nav-item  start">
+                                        <a href="{!! url('ventas') !!}" class="nav-link ">
+                                            <i class="icon-graph"></i>
+                                            <span class="title">VENTAS</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item  start">
+                                        <a href="{!! url('anular-venta') !!}" class="nav-link ">
+                                            <i class="icon-graph"></i>
+                                            <span class="title">ANULAR VENTAS</span>
+                                        </a>
+                                    </li>
+                                    @endif
                                 </ul>
                             </li>     
