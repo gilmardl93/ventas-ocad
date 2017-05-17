@@ -1,0 +1,1 @@
+<iframe src="{!! route('PDFPago') !!}" width="1300" height="950" id="recibo"></iframe>

@@ -62,6 +62,12 @@ Route::post('registrar-venta', 'VentaController@registrar');
 Route::get('anular-venta','VentaController@anular');
 Route::post('buscar-comprobante','VentaController@buscar');
 Route::post('anular-comprobante','VentaController@anularrecibo');
+Route::get('reporte-ventas','VentaController@ReporteVenta');
 Route::get('PDFRecibo', 'VentaController@EmitirReciboPDF')->name('PDFRecibo');
+Route::get('PDFDiario', 'VentaController@EmitirReciboPDFDiario')->name('PDFDiario');
 
 });
+
+
+Route::get('PDFPago', 'VentaController@PDFPago')->name('PDFPago');
+Route::get('reportepago', 'VentaController@reportepago');

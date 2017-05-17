@@ -49,6 +49,12 @@
                                             <span class="title">ANULAR VENTAS</span>
                                         </a>
                                     </li>
+                                    <li class="nav-item  start">
+                                        <a href="{!! url('reporte-ventas') !!}" class="nav-link ">
+                                            <i class="icon-graph"></i>
+                                            <span class="title">REPORTE VENTAS</span>
+                                        </a>
+                                    </li>
                                     @endif
                                     @if(Auth::user()->idroles == 2)
                                     <li class="nav-item  start">
@@ -63,6 +69,12 @@
                                             <span class="title">ANULAR VENTAS</span>
                                         </a>
                                     </li>
+                                    <li class="nav-item  start">
+                                        <a href="{!! url('reporte-ventas') !!}" class="nav-link ">
+                                            <i class="icon-graph"></i>
+                                            <span class="title">REPORTE VENTAS</span>
+                                        </a>
+                                    </li>
                                     @endif
                                 </ul>
-                            </li>     
+                            </li>

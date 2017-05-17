@@ -17,8 +17,8 @@ class UsuariosController extends Controller
 
 	public function autenticar(Request $request)
 	{
-		if (Auth::attempt(['username' => $request->username, 'password' =>  $request->password, 'estado' => 1])) 
-		{	
+		if (Auth::attempt(['username' => $request->username, 'password' =>  $request->password, 'estado' => 1]))
+		{
 			echo 1;
 		}else
 		{
@@ -62,7 +62,7 @@ class UsuariosController extends Controller
 	{
 		return view('usuarios.dashboard');
 	}
-	
+
 	public function formulario()
 	{
 		$roles = Rol::where('estado',1)->pluck('descripcion','id');
